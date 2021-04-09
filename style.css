@@ -1,0 +1,29 @@
+body{
+    font-family: 13px, 'Inter', sans-serif;
+}
+span#mention {
+    background-color: black;
+    color: white;
+}
+span#mentionMsg{
+    background-color: rgba(255, 0, 0, 0.3);
+}
+/* SeaGreen: rgb(46, 139, 87), Blue: rgb(0, 0, 255), OrangeRed: rgb(255, 69, 0)*/
+span#userColorBlue{
+    color: rgb(0, 0, 255);
+}
+span#userColorOrangeRed{
+    color: rgb(255, 69, 0);
+}
+span#userColorSeaGreen{
+    color: rgb(46, 139, 87);
+}
+button{
+    background-color: #9147ff;
+    color: white;
+    border: none;
+}
+span#mentionSomebody{
+    background-color: #dedee3;
+    color: #18181b;
+}
