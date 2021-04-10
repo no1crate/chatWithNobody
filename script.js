@@ -32,7 +32,7 @@ if(!usr){
     usr = "Crate"
 } else if(usr.length < 5){
     usr = "Crate"
-} else if(usr.toLower() == botUsr.toLower()){
+} else if(usr.toLowerCase() == botUsr.toLowerCase()){
     usr = "Crate"
 }
 const mention = `<span id="mention">${usr}</span>`
