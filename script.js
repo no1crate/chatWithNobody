@@ -29,10 +29,12 @@ const mentionNightbot = `<span id="mentionSomebody">Nightbot</span>`
     return String.replace(`${blackword}`, `${censored}`)
 } */
 if(!usr){
-    usr = "NeverGonnaGiveYouUp"
+    usr = "Crate"
 } else if(usr.length < 5){
-    usr = "NeverGonnaGiveYouUp"
-} 
+    usr = "Crate"
+} else if(usr.toLower() == botUsr.toLower()){
+    usr = "Crate"
+}
 const mention = `<span id="mention">${usr}</span>`
 const color = colors[randomNum(0, 2)]
 if(color == "Blue"){
