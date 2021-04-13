@@ -27,3 +27,6 @@ span#mentionSomebody{
     background-color: #dedee3;
     color: #18181b;
 }
+a {
+    text-decoration: none;
+}

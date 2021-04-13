@@ -29,12 +29,13 @@ const mentionNightbot = `<span id="mentionSomebody">Nightbot</span>`
     return String.replace(`${blackword}`, `${censored}`)
 } */
 if(!usr){
-    usr = "Crate"
+    usr = "no1crate"
 } else if(usr.length < 5){
-    usr = "Crate"
+    usr = "no1crate"
 } else if(usr.toLowerCase() == botUsr.toLowerCase()){
-    usr = "Crate"
+    usr = "no1crate"
 }
+const onlyUsr = usr
 const mention = `<span id="mention">${usr}</span>`
 const color = colors[randomNum(0, 2)]
 if(color == "Blue"){
@@ -60,7 +61,7 @@ function send(){
         msg = msg.replace(`${botUsr}`, `${mentionNightbot}`)
         msg = msg.replace(`${usr}`, `${mention}`)
         /*Here is where message send*/
-        document.getElementById(`chat`).innerHTML += `${finalTime} <img src="https://static-cdn.jtvnw.net/badges/v1/5527c58c-fb7d-422d-b71b-f309dcb85cc1/1" ${hwBadge}></img> ${usr}: ${msg} ${skipLine}`
+        document.getElementById(`chat`).innerHTML += `${finalTime} <img src="https://static-cdn.jtvnw.net/badges/v1/5527c58c-fb7d-422d-b71b-f309dcb85cc1/1" ${hwBadge}></img><a href="https://twitch.tv/${onlyUsr}">${usr}</a>: ${msg} ${skipLine}`
         msg = msg.toLowerCase()
         if(msg.startsWith("hi")){
             document.getElementById(`chat`).innerHTML += `${finalTime} <span id="mentionMsg"><img src="https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/1" ${hwBadge}></img>${botUsr}: Hi @${mention}, how are you? ${skipLine}</span>`
