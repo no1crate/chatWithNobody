@@ -1,5 +1,5 @@
 
-const colors = ["SeaGreen", "Blue" , "OrangeRed"]
+const colors = ["SeaGreen", "Blue" , "OrangeRed", "Chocolate"]
 function randomNum(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -37,14 +37,15 @@ if(!usr){
 }
 const onlyUsr = usr
 const mention = `<span id="mention">${usr}</span>`
-const color = colors[randomNum(0, 2)]
+const color = colors[randomNum(0, colors.length)]
 if(color == "Blue"){
     usr = `<span id="userColorBlue">${usr}</span>`
 } else if(color == "SeaGreen"){
     usr = `<span id="userColorSeaGreen">${usr}</span>`
 } else if(color == "OrangeRed"){
     usr = `<span id="userColorOrangeRed">${usr}</span>`
-}
+} else if(color == "Chocolate"){}
+    usr = `<span id="userColorChocolate">${usr}</span>`
 function send(){
     msg = document.getElementById("chatId").value;
     if(!msg){

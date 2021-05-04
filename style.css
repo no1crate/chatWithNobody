@@ -18,6 +18,9 @@ span#userColorOrangeRed{
 span#userColorSeaGreen{
     color: rgb(46, 139, 87);
 }
+span#userColorChocolate{
+    color: rgb(217,124,59);
+}
 button{
     background-color: #9147ff;
     color: white;
