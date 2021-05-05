@@ -9,17 +9,20 @@ span#mentionMsg{
     background-color: rgba(255, 0, 0, 0.3);
 }
 /* SeaGreen: rgb(46, 139, 87), Blue: rgb(0, 0, 255), OrangeRed: rgb(255, 69, 0)*/
-span#userColorBlue{
+span#Blue{
     color: rgb(0, 0, 255);
 }
-span#userColorOrangeRed{
+span#OrangeRed{
     color: rgb(255, 69, 0);
 }
-span#userColorSeaGreen{
+span#SeaGreen{
     color: rgb(46, 139, 87);
 }
-span#userColorChocolate{
+span#Chocolate{
     color: rgb(217,124,59);
+}
+span#Firebrick{
+    color: rgb(187,58,58);
 }
 button{
     background-color: #9147ff;
