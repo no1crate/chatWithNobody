@@ -61,6 +61,8 @@ function send(){
             document.getElementById(`chat`).innerHTML += `${finalTime} <span id="mentionMsg"><img src="https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/1" ${hwBadge}></img>${botUsr}: Hi @${mention}, how are you? ${skipLine}</span>`
         } else if(msg.startsWith("goodbye")){
             document.getElementById(`chat`).innerHTML += `${finalTime} <span id="mentionMsg">${botUsr}: Goodbye @${mention}, see you soon <img src="${emotes.hackermans.img}" ${hwEmotes}></img></span>`
+        } else if(msg == "GXEHMX-DMXWRY-FYVBFE"){
+            document.getElementById(`chat`).innerHTML += `${finaltime} ${botUsr}: Modo fan de la señora activado!, pero... Hromija`
         }
     }
 }
