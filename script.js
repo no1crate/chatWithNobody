@@ -62,7 +62,7 @@ function send(){
         } else if(msg.startsWith("goodbye")){
             document.getElementById(`chat`).innerHTML += `${finalTime} <span id="mentionMsg">${botUsr}: Goodbye @${mention}, see you soon <img src="${emotes.hackermans.img}" ${hwEmotes}></img></span>`
         } else if(msg.startsWith("gxehmx-dmxwry-fyvbfe")){
-            document.getElementById(`chat`).innerHTML += `${finalTime} <span id="mentionMsg">${botUsr}: @${mention}, Modo fan de  la señora activado, pero... jormijha</span>`
+            document.getElementById(`chat`).innerHTML += `${finalTime} <span id="mentionMsg">${botUsr}: @${mention}, Modo fan de  la señora activado, pero... jormijha</span>${skipLine}`
         }
     }
 }
