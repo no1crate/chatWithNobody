@@ -18,6 +18,26 @@ const emotes = {
         'img': 'https://cdn.betterttv.net/emote/5c857788f779543bcdf37124/1x'
     }
 }
+const bits = {
+    '1': {
+        'img': 'https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/1/2.gif'
+    },
+    '100': {
+        'img': 'https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/100/2.gif'
+    },
+    '1000': {
+        'img': 'https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/1000/2.gif'
+    }, 
+    '5000': {
+        'img': 'https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/5000/2.gif'
+    },
+    '10000': {
+        'img': 'https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/10000/2.gif'
+    },
+    '100000': {
+        'img': 'https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/100000/2.gif'
+    }
+}
 const skipLine = "<br>"
 const hwEmotes = "height=28 width=28"
 const hwBadge = "height=15 width=15" 
@@ -38,7 +58,7 @@ if(!usr){
 const onlyUsr = usr
 const mention = `<span id="mention">${usr}</span>`
 const color = colors[randomNum(0, colors.length)]
-usr = `<span id="${color}">${usr}</span>`
+usr = `<span id="User${color}">${usr}</span>`
 function send(){
     msg = document.getElementById("chatId").value;
     if(!msg){
@@ -54,6 +74,12 @@ function send(){
         msg = msg.replace(`${emotes.pressf.name}`, `<img src="${emotes.pressf.img}" ${hwEmotes}> </img>`);
         msg = msg.replace(`${botUsr}`, `${mentionNightbot}`)
         msg = msg.replace(`${usr}`, `${mention}`)
+        /* for (let i = 0; i <= 1000000; i++) {
+            if(i <= 99){
+                msg = msg.replace(`cheer${i}`, `<img src="${bits["1"].img}"></img><span id="Bits1">${i}</span>`)
+                msg = msg.replace(`<img src="${bits["1"].img}"></img><span id="Bits1">`)
+            }
+        } */
         /*Here is where message send*/
         document.getElementById(`chat`).innerHTML += `${finalTime} <img src="https://static-cdn.jtvnw.net/badges/v1/5527c58c-fb7d-422d-b71b-f309dcb85cc1/1" ${hwBadge}></img><a href="https://twitch.tv/${onlyUsr}">${usr}</a>: ${msg} ${skipLine}`
         msg = msg.toLowerCase()
