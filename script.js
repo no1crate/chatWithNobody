@@ -20,22 +20,22 @@ const emotes = {
 }
 const bits = {
     '1': {
-        'img': 'https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/1/2.gif'
+        'img': 'https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/1/1.gif'
     },
     '100': {
-        'img': 'https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/100/2.gif'
+        'img': 'https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/100/1.gif'
     },
     '1000': {
-        'img': 'https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/1000/2.gif'
+        'img': 'https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/1000/1.gif'
     }, 
     '5000': {
-        'img': 'https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/5000/2.gif'
+        'img': 'https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/5000/1.gif'
     },
     '10000': {
-        'img': 'https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/10000/2.gif'
+        'img': 'https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/10000/1.gif'
     },
     '100000': {
-        'img': 'https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/100000/2.gif'
+        'img': 'https://d3aqoihi2n8ty8.cloudfront.net/actions/cheer/light/animated/100000/1.gif'
     }
 }
 const skipLine = "<br>"
@@ -74,12 +74,22 @@ function send(){
         msg = msg.replace(`${emotes.pressf.name}`, `<img src="${emotes.pressf.img}" ${hwEmotes}> </img>`);
         msg = msg.replace(`${botUsr}`, `${mentionNightbot}`)
         msg = msg.replace(`${usr}`, `${mention}`)
-        /* for (let i = 0; i <= 1000000; i++) {
+        for (let i = 0; i <= 1000000; i++) {
+            msgLower = msg.toLowerCase();
             if(i <= 99){
-                msg = msg.replace(`cheer${i}`, `<img src="${bits["1"].img}"></img><span id="Bits1">${i}</span>`)
-                msg = msg.replace(`<img src="${bits["1"].img}"></img><span id="Bits1">`)
+                msg = msgLower.replace(`cheer${i} `, `<img src="${bits["1"].img}"></img><span id="bits1">${i}</span> `)
+            } else if(i <= 999){
+                msg = msgLower.replace(`cheer${i} `, `<img src="${bits["100"].img}"></img><span id="bits100">${i}</span> `)
+            } else if(i <= 4999){
+                msg = msgLower.replace(`cheer${i} `, `<img src="${bits["1000"].img}"></img><span id="bits1000">${i}</span> `)
+            } else if(i <= 9999){
+                msg = msgLower.replace(`cheer${i} `, `<img src="${bits["5000"].img}"></img><span id="bits5000">${i}</span> `)
+            } else if(i <= 99999){
+                msg = msgLower.replace(`cheer${i} `, `<img src="${bits["10000"].img}"></img><span id="bits10000">${i}</span> `)
+            } else if(i > 99999){
+                msg = msgLower.replace(`cheer${i} `, `<img src="${bits["100000"].img}"></img><span id="bits100000">${i}</span> `)
             }
-        } */
+        }
         /*Here is where message send*/
         document.getElementById(`chat`).innerHTML += `${finalTime} <img src="https://static-cdn.jtvnw.net/badges/v1/5527c58c-fb7d-422d-b71b-f309dcb85cc1/1" ${hwBadge}></img><a href="https://twitch.tv/${onlyUsr}">${usr}</a>: ${msg} ${skipLine}`
         msg = msg.toLowerCase()

@@ -36,9 +36,21 @@ span#mentionSomebody{
 a {
     text-decoration: none;
 }
-span#Bits1{
-    color: grey;
+span#bits1{
+    color: #757575;
 }
-span#Bits100{
-    color: purple;
+span#bits100{
+    color: #a969f0;
+}
+span#bits1000{
+    color: #29d1c3;
+}
+span#bits5000{
+    color: #2e80e3;
+}
+span#bits10000{
+    color: #fd5551;
+}
+span#bits100000{
+    color: #f3a624;
 }
