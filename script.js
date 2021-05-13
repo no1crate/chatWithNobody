@@ -60,6 +60,7 @@ const mention = `<span id="mention">${usr}</span>`
 const color = colors[randomNum(0, colors.length)]
 usr = `<span id="User${color}">${usr}</span>`
 function send(){
+    let bit = 0;
     msg = document.getElementById("chatId").value;
     if(!msg){
         null
@@ -75,19 +76,26 @@ function send(){
         msg = msg.replace(`${botUsr}`, `${mentionNightbot}`)
         msg = msg.replace(`${usr}`, `${mention}`)
         for (let i = 0; i <= 1000000; i++) {
-            msgLower = msg.toLowerCase();
+            msgLower = msg.toLowerCase() + " "
             if(i <= 99){
-                msg = msgLower.replace(`cheer${i} `, `<img src="${bits["1"].img}"></img><span id="bits1">${i}</span> `)
+                msg = msgLower.replace(`cheer${i}`, `<img src="${bits["1"].img}"></img><span id="bits1">${i}</span>`)
+                bit += i
             } else if(i <= 999){
-                msg = msgLower.replace(`cheer${i} `, `<img src="${bits["100"].img}"></img><span id="bits100">${i}</span> `)
+                msg = msgLower.replace(`cheer${i}`, `<img src="${bits["100"].img}"></img><span id="bits100">${i}</span>`)
+                bit += i
             } else if(i <= 4999){
-                msg = msgLower.replace(`cheer${i} `, `<img src="${bits["1000"].img}"></img><span id="bits1000">${i}</span> `)
+
+                msg = msgLower.replace(`cheer${i}`, `<img src="${bits["1000"].img}"></img><span id="bits1000">${i}</span>`)
+                bit += i
             } else if(i <= 9999){
-                msg = msgLower.replace(`cheer${i} `, `<img src="${bits["5000"].img}"></img><span id="bits5000">${i}</span> `)
+                msg = msgLower.replace(`cheer${i}`, `<img src="${bits["5000"].img}"></img><span id="bits5000">${i}</span>`)
+                bit += i
             } else if(i <= 99999){
-                msg = msgLower.replace(`cheer${i} `, `<img src="${bits["10000"].img}"></img><span id="bits10000">${i}</span> `)
+                msg = msgLower.replace(`cheer${i}`, `<img src="${bits["10000"].img}"></img><span id="bits10000">${i}</span>`)
+                bit += i
             } else if(i > 99999){
-                msg = msgLower.replace(`cheer${i} `, `<img src="${bits["100000"].img}"></img><span id="bits100000">${i}</span> `)
+                msg = msgLower.replace(`cheer${i}`, `<img src="${bits["100000"].img}"></img><span id="bits100000">${i}</span>`)
+                bit += i
             }
         }
         /*Here is where message send*/
@@ -99,6 +107,9 @@ function send(){
             document.getElementById(`chat`).innerHTML += `${finalTime} <span id="mentionMsg"><img src="https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/1" ${hwBadge}></img>${botUsr}: Goodbye @${mention}, see you soon <img src="${emotes.hackermans.img}" ${hwEmotes}></img></span>`
         } else if(msg.startsWith("gxehmx-dmxwry-fyvbfe")){
             document.getElementById(`chat`).innerHTML += `${finalTime} <span id="mentionMsg"><img src="https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/1" ${hwBadge}></img>${botUsr}: @${mention}, Modo fan de  la señora activado, pero... jormijha</span>${skipLine}`
+        } else if(bit > 0){
+            hasDonated = `<span id="mentionMsg">${finalTime} ${botUsr}: ${mention} has donated ${bit}</span>`
+            document.getElementById(`chat`).innerHTML += `${hasDonated}${skipLine}`
         }
     }
 }
