@@ -78,24 +78,35 @@ function send(){
         for (let i = 0; i <= 1000000; i++) {
             msgLower = msg.toLowerCase() + " "
             if(i <= 99){
-                msg = msgLower.replace(`cheer${i}`, `<img src="${bits["1"].img}"></img><span id="bits1">${i}</span>`)
-                bit += i
+                if(msgLower.includes(`cheer${i} `)){
+                    msg = msgLower.replace(`cheer${i}`, `<img src="${bits["1"].img}"></img><span id="bits1">${i}</span>`)
+                    bit += i
+                }
             } else if(i <= 999){
-                msg = msgLower.replace(`cheer${i}`, `<img src="${bits["100"].img}"></img><span id="bits100">${i}</span>`)
-                bit += i
+                if(msgLower.includes(`cheer${i} `)){
+                    msg = msgLower.replace(`cheer${i}`, `<img src="${bits["100"].img}"></img><span id="bits100">${i}</span>`)
+                    bit += i
+                }
             } else if(i <= 4999){
-
-                msg = msgLower.replace(`cheer${i}`, `<img src="${bits["1000"].img}"></img><span id="bits1000">${i}</span>`)
-                bit += i
+                if(msgLower.includes(`cheer${i} `)){
+                    msg = msgLower.replace(`cheer${i}`, `<img src="${bits["1000"].img}"></img><span id="bits1000">${i}</span>`)
+                    bit += i
+                }
             } else if(i <= 9999){
-                msg = msgLower.replace(`cheer${i}`, `<img src="${bits["5000"].img}"></img><span id="bits5000">${i}</span>`)
-                bit += i
+                if(msgLower.includes(`cheer${i} `)){
+                    msg = msgLower.replace(`cheer${i}`, `<img src="${bits["5000"].img}"></img><span id="bits5000">${i}</span>`)
+                    bit += i
+                }
             } else if(i <= 99999){
-                msg = msgLower.replace(`cheer${i}`, `<img src="${bits["10000"].img}"></img><span id="bits10000">${i}</span>`)
-                bit += i
+                if(msgLower.includes(`cheer${i} `)){
+                    msg = msgLower.replace(`cheer${i}`, `<img src="${bits["10000"].img}"></img><span id="bits10000">${i}</span>`)
+                    bit += i
+                }
             } else if(i > 99999){
-                msg = msgLower.replace(`cheer${i}`, `<img src="${bits["100000"].img}"></img><span id="bits100000">${i}</span>`)
-                bit += i
+                if(msgLower.includes(`cheer${i} `)){
+                    msg = msgLower.replace(`cheer${i}`, `<img src="${bits["100000"].img}"></img><span id="bits100000">${i}</span>`)
+                    bit += i
+                }
             }
         }
         /*Here is where message send*/
@@ -110,6 +121,9 @@ function send(){
         } else if(bit > 0){
             hasDonated = `<span id="mentionMsg">${finalTime} ${botUsr}: ${mention} has donated ${bit}</span>`
             document.getElementById(`chat`).innerHTML += `${hasDonated}${skipLine}`
+            if(usr != `<span id="User${color}"><img src="https://static-cdn.jtvnw.net/badges/v1/8bedf8c3-7a6d-4df2-b62f-791b96a5dd31/1" ${hwBadge}></img>${usr}</span>`){
+                usr = `<span id="User${color}"><img src="https://static-cdn.jtvnw.net/badges/v1/8bedf8c3-7a6d-4df2-b62f-791b96a5dd31/1" ${hwBadge}></img>${usr}</span>`
+            }
         }
     }
 }
