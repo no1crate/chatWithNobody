@@ -124,6 +124,8 @@ function send(){
             if(usr != `<span id="User${color}"><img src="https://static-cdn.jtvnw.net/badges/v1/8bedf8c3-7a6d-4df2-b62f-791b96a5dd31/1" ${hwBadge}></img>${usr}</span>`){
                 usr = `<span id="User${color}"><img src="https://static-cdn.jtvnw.net/badges/v1/8bedf8c3-7a6d-4df2-b62f-791b96a5dd31/1" ${hwBadge}></img>${usr}</span>`
             }
+        } else if(msg.startsWith("i want to see gas")){
+            document.getElementById(`chat`).innerHTML += `${finalTime} <span id="mentionMsg"><img src="https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/1" ${hwBadge}></img>${botUsr}: @${mention}, <a href="https://clips.twitch.tv/AnnoyingNurturingLeopardHeyGuys-nKo1zfKOUx_ssEHp">Quiero ver gas</a></span>${skipLine}`
         }
     }
 }
