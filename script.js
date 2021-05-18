@@ -62,6 +62,8 @@ usr = `<span id="User${color}">${usr}</span>`
 function send(){
     let bit = 0;
     msg = document.getElementById("chatId").value;
+    msg = msg.replace("<", "");
+    msg = msg.replace(">", "")
     if(!msg){
         null
     } else {
